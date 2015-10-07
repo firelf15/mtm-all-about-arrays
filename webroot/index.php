@@ -3,41 +3,72 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation</title>
+    <title>All About Arrays</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
     <div class="row">
       <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
+        <h1>All About Arrays</h1>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="large-12 columns">
         <div class="panel">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
+          <h3>Not Yahtzee!</h3>
+          <p>Given 5 6-sided dice.</p>
+          <p>
+          <?php
+          // Each die could be an index array
+          /*
+          $die1 = array(1,2,3,4,5,6);
+          $die2 = array(1,2,3,4,5,6);
+          $die3 = array(1,2,3,4,5,6);
+          $die4 = array(1,2,3,4,5,6);
+          $die5 = array(1,2,3,4,5,6);
+          */
+          // An associative array of 5 index arrays for all the dice togather
+          $all_dice = array(
+            'die1' => array(1,2,3,4,5,6),
+            'die2' => array(6,5,4,3,2,1),
+            'die3' => array(2,4,6,1,3,5),
+            'die4' => array(1,3,5,2,4,6),
+            'die5' => array(6,4,2,1,3,5)
+          );
+          echo 'a var_dump of $all_dice: ';
+          var_dump($all_dice);
+          ?></p>
           <div class="row">
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
+            <div class="large-4 medium-4 columns"><p>$roll1_die1 = array_rand($all_dice);<br>
+   echo $roll1_die1;<br>Results in:</p>
+<?php
+   $roll1_die1 = array_rand($all_dice);
+   echo $roll1_die1;
+?>
+            </div>
+            <div class="large-4 medium-4 columns"><p>$roll1_die2 = array_rand($all_dice['die2']);<br>
+   echo $roll1_die2;<br>
+   Results in:
+<?php
+$roll1_die2 = array_rand($all_dice);
+   echo $all_dice[$roll1_die2];
+?>
             </div>
             <div class="large-4 medium-4 columns">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowlege.</p>
+<?php
+
+?>
             </div>
           </div>
           <div class="row">
             <div class="large-4 medium-4 medium-push-2 columns">
-              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
+
             </div>
             <div class="large-4 medium-4 medium-pull-2 columns">
-              <p><a href="https://twitter.com/ZURBfoundation">@zurbfoundation</a><br />Ping us on Twitter if you have questions. When you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-            </div>        
+
+            </div>
           </div>
         </div>
       </div>
@@ -84,9 +115,9 @@
             </div>
           </div>
         </div>
-        
+
         <hr />
-                
+
         <h5>We bet you&rsquo;ll need a form somewhere:</h5>
         <form>
           <div class="row">
@@ -146,20 +177,20 @@
             </div>
           </div>
         </form>
-      </div>     
+      </div>
 
       <div class="large-4 medium-4 columns">
         <h5>Try one of these buttons:</h5>
         <p><a href="#" class="small button">Simple Button</a><br/>
         <a href="#" class="small radius button">Radius Button</a><br/>
-        <a href="#" class="small round button">Round Button</a><br/>            
+        <a href="#" class="small round button">Round Button</a><br/>
         <a href="#" class="medium success button">Success Btn</a><br/>
         <a href="#" class="medium alert button">Alert Btn</a><br/>
-        <a href="#" class="medium secondary button">Secondary Btn</a></p>           
+        <a href="#" class="medium secondary button">Secondary Btn</a></p>
         <div class="panel">
           <h5>So many components, girl!</h5>
           <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-          <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>          
+          <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>
         </div>
       </div>
     </div>
