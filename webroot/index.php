@@ -62,6 +62,9 @@ echo 'a var_dump of $all_dice: ';
           $t1_d5 = $all_dice['die5'];
           $die5 = array_rand($t1_d5);
           echo 'Turn 1, Die 5: ' . $t1_d5[$die5] . '<br>';
+          echo '<p>Now assign to the variable $turn1, all the results in an array.</p>';
+          $turn1 = array($t1_d1[$die1], $t1_d2[$die2],$t1_d3[$die3], $t1_d4[$die4], $t1_d5[$die5]);
+          var_dump($turn1);
           ?>
         </div>
         <div class="large-4 medium-4 columns">
@@ -83,6 +86,9 @@ echo 'a var_dump of $all_dice: ';
           $t2_d5 = $all_dice['die5'];
           $die5 = array_rand($t2_d5);
           echo 'Turn 2, Die 5: ' . $t2_d5[$die5] . '<br>';
+          echo '<p>Now assign to the variable $turn2, all the results in an array.</p>';
+          $turn2 = array($t2_d1[$die1], $t2_d2[$die2],$t2_d3[$die3], $t2_d4[$die4], $t2_d5[$die5]);
+          var_dump($turn2);
           ?>
         </div>
         <div class="large-4 medium-4 columns">
@@ -104,6 +110,9 @@ echo 'a var_dump of $all_dice: ';
           $t3_d5 = $all_dice['die5'];
           $die5 = array_rand($t3_d5);
           echo 'Turn 3, Die 5: ' . $t3_d5[$die5] . '<br>';
+          echo '<p>Now assign to the variable $turn3, all the results in an array.</p>';
+          $turn3 = array($t3_d1[$die1], $t3_d2[$die2],$t3_d3[$die3], $t3_d4[$die4], $t3_d5[$die5]);
+          var_dump($turn3);
           ?>
         </div>
       </div>
