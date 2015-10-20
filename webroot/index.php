@@ -39,6 +39,9 @@ $all_dice = array(
   'die4' => array( 1, 3, 5, 2, 4, 6 ),
   'die5' => array( 6, 4, 2, 1, 3, 5 ),
 );
+echo $all_dice['die3'][5];
+$all_dice['die3'][2] = 'foo';
+echo $all_dice['die3'][2];
 echo 'a var_dump of $all_dice: ';
 //var_dump( $all_dice );
 ?></p>
