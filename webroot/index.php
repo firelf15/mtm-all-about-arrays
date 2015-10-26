@@ -13,7 +13,6 @@
     <h1>All About Arrays</h1>
   </div>
 </div>
-
 <div class="row">
   <div class="large-12 columns">
     <div class="panel">
@@ -23,61 +22,48 @@
 
       <p>
         <?php
-        // Each die could be an index array
-        /*
-					$die1 = array(1,2,3,4,5,6);
-					$die2 = array(1,2,3,4,5,6);
-					$die3 = array(1,2,3,4,5,6);
-					$die4 = array(1,2,3,4,5,6);
-					$die5 = array(1,2,3,4,5,6);
-				*/
-
-        // An associative array of 5 index arrays for all the dice togather
-        /*$all_dice = array(
-					'die1' => array( 1, 2, 3, 4, 5, 6 ),
-					'die2' => array( 6, 5, 4, 3, 2, 1 ),
-					'die3' => array( 2, 4, 6, 1, 3, 5 ),
-					'die4' => array( 1, 3, 5, 2, 4, 6 ),
-					'die5' => array( 6, 4, 2, 1, 3, 5 ),
-				);*/
-
-        // Use loops to build the indexed arrays above
-        $die1 = array();
-        $die2 = array();
-        $die3 = array();
-        $die4 = array();
-        $die5 = array();
-        // Build the array for $die1
-        for ( $i = 1; $i < 7; ++ $i ) {
-          array_push( $die1, $i );
+        // An associative array of 5 random index arrays for all the dice togather
+        $die1  = array();
+        $die2  = array();
+        $die3  = array();
+        $die4  = array();
+        $die5  = array();
+        $sides = range( 1, 6 );
+        shuffle( $sides );
+        foreach ( $sides as $side ) {
+          array_push( $die1, $side );
         }
-        // Build the array for $die2
-        for ( $i = 1; $i < 7; ++ $i ) {
-          array_unshift( $die2, $i );
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die2, $side );
         }
-        // Build the array for $die3
-        for ( $i = 2; $i < 7; $i += 2 ) {
-          array_push( $die3, $i );
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die3, $side );
         }
-        for ( $i = 1; $i < 7; $i += 2 ) {
-          array_push( $die3, $i );
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die4, $side );
         }
-        // Build the array for $die4
-        for ( $i = 1; $i < 7; $i += 2 ) {
-          array_push( $die4, $i );
-        }
-        for ( $i = 2; $i < 7; $i += 2 ) {
-          array_push( $die4, $i );
-        }
-        // Build the array for $die5
-        for ( $i = 1; $i < 7; $i += 2 ) {
-          array_push( $die5, $i );
-        }
-        for ( $i = 2; $i < 7; $i += 2 ) {
-          array_unshift( $die5, $i );
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die5, $side );
         }
         $all_dice = array( $die1, $die2, $die3, $die4, $die5 );
-
+        echo 'die1 = ';
+        var_dump( $die1 );
+        echo( '<hr>' );
+        echo 'die2 = ';
+        var_dump( $die2 );
+        echo( '<hr>' );
+        echo 'die3 = ';
+        var_dump( $die3 );
+        echo( '<hr>' );
+        echo 'die4 = ';
+        var_dump( $die4 );
+        echo( '<hr>' );
+        echo 'die5 = ';
+        var_dump( $die5 );
         ?></p>
 
       <div class="row">
@@ -158,60 +144,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="large-4 medium-4 columns">
-          <h2>Roll all the dice for Five-of-a-Kind</h2>
-
-          <h3>Code written out for each of 5 dice</h3>
-          <?php
-          echo 'Die 1: ' . $all_dice[0][4] . '<br>';
-          echo 'Die 2: ' . $all_dice[1][1] . '<br>';
-          echo 'Die 3: ' . $all_dice[2][5] . '<br>';
-          echo 'Die 4: ' . $all_dice[3][2] . '<br>';
-          echo 'Die 5: ' . $all_dice[4][5] . '<br>';
-          ?>
-        </div>
-        <div class="large-4 medium-4 columns">
-          <h2>Roll all the dice for a Lg-Straight</h2>
-
-          <h3>Code written out for each of 5 dice, 2-6</h3>
-          <?php
-          echo 'Die 1: ' . $all_dice[0][1] . '<br>';
-          echo 'Die 2: ' . $all_dice[1][3] . '<br>';
-          echo 'Die 3: ' . $all_dice[2][1] . '<br>';
-          echo 'Die 4: ' . $all_dice[3][2] . '<br>';
-          echo 'Die 5: ' . $all_dice[4][0] . '<br>';
-          ?>
-        </div>
-        <div class="large-4 medium-4 columns">
-          <h2>Roll all the dice for a Full House</h2>
-
-          <h3>Code written out for each of 5 dice, 3s and 6s</h3>
-          <?php
-          echo 'Die 1: ' . $all_dice[0][2] . '<br>';
-          echo 'Die 2: ' . $all_dice[1][3] . '<br>';
-          echo 'Die 3: ' . $all_dice[2][4] . '<br>';
-          echo 'Die 4: ' . $all_dice[3][5] . '<br>';
-          echo 'Die 5: ' . $all_dice[4][0] . '<br>';
-          ?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-4 medium-4 medium-push-2 columns">
-
-        </div>
-        <div class="large-4 medium-4 medium-pull-2 columns">
-
-        </div>
       </div>
     </div>
   </div>
 </div>
-
 <div class="row">
   <div class="large-8 medium-8 columns">
     <h5>Here&rsquo;s your basic grid:</h5>
     <!-- Grid Example -->
-
     <div class="row">
       <div class="large-12 columns">
         <div class="callout panel">
