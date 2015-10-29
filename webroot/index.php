@@ -13,7 +13,6 @@
     <h1>All About Arrays</h1>
   </div>
 </div>
-
 <div class="row">
   <div class="large-12 columns">
     <div class="panel">
@@ -41,133 +40,137 @@ $all_dice = array(
 );
 echo 'a var_dump of $all_dice: ';
 var_dump( $all_dice );
-?></p>
+?></p><?php 
+        // An associative array of 5 random index arrays for all the dice togather
+        $die1  = array();
+        $die2  = array();
+        $die3  = array();
+        $die4  = array();
+        $die5  = array();
+        $sides = range( 1, 6 );
+        shuffle( $sides );
+        foreach ( $sides as $side ) {
+          array_push( $die1, $side );
+        }
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die2, $side );
+        }
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die3, $side );
+        }
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die4, $side );
+        }
+        foreach ( $sides as $side ) {
+          shuffle( $sides );
+          array_push( $die5, $side );
+        }
+        $all_dice = array( $die1, $die2, $die3, $die4, $die5 );
+        echo 'die1 = ';
+        var_dump( $die1 );
+        echo( '<hr>' );
+        echo 'die2 = ';
+        var_dump( $die2 );
+        echo( '<hr>' );
+        echo 'die3 = ';
+        var_dump( $die3 );
+        echo( '<hr>' );
+        echo 'die4 = ';
+        var_dump( $die4 );
+        echo( '<hr>' );
+        echo 'die5 = ';
+        var_dump( $die5 );
+        ?></p>
+
       <div class="row">
         <div class="large-4 medium-4 columns">
           <h2>Roll all the dice for Turn 1</h2>
+
           <h3>Code written out for each of 5 dice</h3>
           <?php
-          $t1_d1 = $all_dice['die1'];
-          $die1 = array_rand($t1_d1);
-          echo 'Turn 1, Die 1: ' . $t1_d1[$die1] . '<br>';
-          $t1_d2 = $all_dice['die2'];
-          $die2 = array_rand($t1_d2);
-          echo 'Turn 1, Die 2: ' . $t1_d2[$die2] . '<br>';
-          $t1_d3 = $all_dice['die3'];
-          $die3 = array_rand($t1_d3);
-          echo 'Turn 1, Die 3: ' . $t1_d3[$die3] . '<br>';
-          $t1_d4 = $all_dice['die4'];
-          $die4 = array_rand($t1_d4);
-          echo 'Turn 1, Die 4: ' . $t1_d4[$die4] . '<br>';
-          $t1_d5 = $all_dice['die5'];
-          $die5 = array_rand($t1_d5);
-          echo 'Turn 1, Die 5: ' . $t1_d5[$die5] . '<br>';
+          $t1_d1 = $all_dice[0];
+          $die1  = array_rand( $t1_d1 );
+          echo 'Turn 1, Die 1: ' . $t1_d1[ $die1 ] . '<br>';
+          $t1_d2 = $all_dice[1];
+          $die2  = array_rand( $t1_d2 );
+          echo 'Turn 1, Die 2: ' . $t1_d2[ $die2 ] . '<br>';
+          $t1_d3 = $all_dice[2];
+          $die3  = array_rand( $t1_d3 );
+          echo 'Turn 1, Die 3: ' . $t1_d3[ $die3 ] . '<br>';
+          $t1_d4 = $all_dice[3];
+          $die4  = array_rand( $t1_d4 );
+          echo 'Turn 1, Die 4: ' . $t1_d4[ $die4 ] . '<br>';
+          $t1_d5 = $all_dice[4];
+          $die5  = array_rand( $t1_d5 );
+          echo 'Turn 1, Die 5: ' . $t1_d5[ $die5 ] . '<br>';
           echo '<p>Now assign to the variable $turn1, all the results in an array.</p>';
-          $turn1 = array($t1_d1[$die1], $t1_d2[$die2],$t1_d3[$die3], $t1_d4[$die4], $t1_d5[$die5]);
-          var_dump($turn1);
+          $turn1 = array( $t1_d1[ $die1 ], $t1_d2[ $die2 ], $t1_d3[ $die3 ], $t1_d4[ $die4 ], $t1_d5[ $die5 ] );
+          var_dump( $turn1 );
           ?>
         </div>
         <div class="large-4 medium-4 columns">
-        <h2>Roll all the dice for Turn 2</h2>
+          <h2>Roll all the dice for Turn 2</h2>
+
           <h3>Code written out for each of 5 dice</h3>
           <?php
-          $t2_d1 = $all_dice['die1'];
-          $die1 = array_rand($t2_d1);
-          echo 'Turn 2, Die 1: ' . $t2_d1[$die1] . '<br>';
-          $t2_d2 = $all_dice['die2'];
-          $die2 = array_rand($t2_d2);
-          echo 'Turn 2, Die 2: ' . $t2_d2[$die2] . '<br>';
-          $t2_d3 = $all_dice['die3'];
-          $die3 = array_rand($t2_d3);
-          echo 'Turn 2, Die 3: ' . $t2_d3[$die3] . '<br>';
-          $t2_d4 = $all_dice['die4'];
-          $die4 = array_rand($t2_d4);
-          echo 'Turn 2, Die 4: ' . $t2_d4[$die4] . '<br>';
-          $t2_d5 = $all_dice['die5'];
-          $die5 = array_rand($t2_d5);
-          echo 'Turn 2, Die 5: ' . $t2_d5[$die5] . '<br>';
+          $t2_d1 = $all_dice[0];
+          $die1  = array_rand( $t2_d1 );
+          echo 'Turn 2, Die 1: ' . $t2_d1[ $die1 ] . '<br>';
+          $t2_d2 = $all_dice[1];
+          $die2  = array_rand( $t2_d2 );
+          echo 'Turn 2, Die 2: ' . $t2_d2[ $die2 ] . '<br>';
+          $t2_d3 = $all_dice[2];
+          $die3  = array_rand( $t2_d3 );
+          echo 'Turn 2, Die 3: ' . $t2_d3[ $die3 ] . '<br>';
+          $t2_d4 = $all_dice[3];
+          $die4  = array_rand( $t2_d4 );
+          echo 'Turn 2, Die 4: ' . $t2_d4[ $die4 ] . '<br>';
+          $t2_d5 = $all_dice[4];
+          $die5  = array_rand( $t2_d5 );
+          echo 'Turn 2, Die 5: ' . $t2_d5[ $die5 ] . '<br>';
           echo '<p>Now assign to the variable $turn2, all the results in an array.</p>';
-          $turn2 = array($t2_d1[$die1], $t2_d2[$die2],$t2_d3[$die3], $t2_d4[$die4], $t2_d5[$die5]);
-          var_dump($turn2);
+          $turn2 = array( $t2_d1[ $die1 ], $t2_d2[ $die2 ], $t2_d3[ $die3 ], $t2_d4[ $die4 ], $t2_d5[ $die5 ] );
+          var_dump( $turn2 );
           ?>
         </div>
         <div class="large-4 medium-4 columns">
           <h2>Roll all the dice for Turn 3</h2>
+
           <h3>Code written out for each of 5 dice</h3>
           <?php
-          $t3_d1 = $all_dice['die1'];
-          $die1 = array_rand($t3_d1);
-          echo 'Turn 3, Die 1: ' . $t3_d1[$die1] . '<br>';
-          $t3_d2 = $all_dice['die2'];
-          $die2 = array_rand($t3_d2);
-          echo 'Turn 3, Die 2: ' . $t3_d2[$die2] . '<br>';
-          $t3_d3 = $all_dice['die3'];
-          $die3 = array_rand($t3_d3);
-          echo 'Turn 3, Die 3: ' . $t3_d3[$die3] . '<br>';
-          $t3_d4 = $all_dice['die4'];
-          $die4 = array_rand($t3_d4);
-          echo 'Turn 3, Die 4: ' . $t3_d4[$die4] . '<br>';
-          $t3_d5 = $all_dice['die5'];
-          $die5 = array_rand($t3_d5);
-          echo 'Turn 3, Die 5: ' . $t3_d5[$die5] . '<br>';
+          $t3_d1 = $all_dice[0];
+          $die1  = array_rand( $t3_d1 );
+          echo 'Turn 3, Die 1: ' . $t3_d1[ $die1 ] . '<br>';
+          $t3_d2 = $all_dice[1];
+          $die2  = array_rand( $t3_d2 );
+          echo 'Turn 3, Die 2: ' . $t3_d2[ $die2 ] . '<br>';
+          $t3_d3 = $all_dice[2];
+          $die3  = array_rand( $t3_d3 );
+          echo 'Turn 3, Die 3: ' . $t3_d3[ $die3 ] . '<br>';
+          $t3_d4 = $all_dice[3];
+          $die4  = array_rand( $t3_d4 );
+          echo 'Turn 3, Die 4: ' . $t3_d4[ $die4 ] . '<br>';
+          $t3_d5 = $all_dice[4];
+          $die5  = array_rand( $t3_d5 );
+          echo 'Turn 3, Die 5: ' . $t3_d5[ $die5 ] . '<br>';
           echo '<p>Now assign to the variable $turn3, all the results in an array.</p>';
-          $turn3 = array($t3_d1[$die1], $t3_d2[$die2],$t3_d3[$die3], $t3_d4[$die4], $t3_d5[$die5]);
-          var_dump($turn3);
+          $turn3 = array( $t3_d1[ $die1 ], $t3_d2[ $die2 ], $t3_d3[ $die3 ], $t3_d4[ $die4 ], $t3_d5[ $die5 ] );
+          var_dump( $turn3 );
           ?>
         </div>
       </div>
       <div class="row">
-        <div class="large-4 medium-4 columns">
-          <h2>Roll all the dice for Five-of-a-Kind</h2>
-          <h3>Code written out for each of 5 dice</h3>
-          <?php
-          echo 'Die 1: ' . $all_dice['die1'][4] . '<br>';
-          echo 'Die 2: ' . $all_dice['die2'][1] . '<br>';
-          echo 'Die 3: ' . $all_dice['die3'][5] . '<br>';
-          echo 'Die 4: ' . $all_dice['die4'][2] . '<br>';
-          echo 'Die 5: ' . $all_dice['die5'][5] . '<br>';
-          ?>
-        </div>
-        <div class="large-4 medium-4 columns">
-          <h2>Roll all the dice for a Lg-Straight</h2>
-          <h3>Code written out for each of 5 dice, 2-6</h3>
-          <?php
-          echo 'Die 1: ' . $all_dice['die1'][1] . '<br>';
-          echo 'Die 2: ' . $all_dice['die2'][3] . '<br>';
-          echo 'Die 3: ' . $all_dice['die3'][1] . '<br>';
-          echo 'Die 4: ' . $all_dice['die4'][2] . '<br>';
-          echo 'Die 5: ' . $all_dice['die5'][0] . '<br>';
-          ?>
-        </div>
-        <div class="large-4 medium-4 columns">
-        <h2>Roll all the dice for a Full House</h2>
-          <h3>Code written out for each of 5 dice, 3s and 6s</h3>
-          <?php
-          echo 'Die 1: ' . $all_dice['die1'][2] . '<br>';
-          echo 'Die 2: ' . $all_dice['die2'][3] . '<br>';
-          echo 'Die 3: ' . $all_dice['die3'][4] . '<br>';
-          echo 'Die 4: ' . $all_dice['die4'][5] . '<br>';
-          echo 'Die 5: ' . $all_dice['die5'][0] . '<br>';
-          ?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-4 medium-4 medium-push-2 columns">
-
-        </div>
-        <div class="large-4 medium-4 medium-pull-2 columns">
-
-        </div>
       </div>
     </div>
   </div>
 </div>
-
 <div class="row">
   <div class="large-8 medium-8 columns">
     <h5>Here&rsquo;s your basic grid:</h5>
     <!-- Grid Example -->
-
     <div class="row">
       <div class="large-12 columns">
         <div class="callout panel">
