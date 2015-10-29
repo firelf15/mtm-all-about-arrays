@@ -40,7 +40,7 @@ $all_dice = array(
   'die5' => array( 6, 4, 2, 1, 3, 5 ),
 );
 echo 'a var_dump of $all_dice: ';
-//var_dump( $all_dice );
+var_dump( $all_dice );
 ?></p>
       <div class="row">
         <div class="large-4 medium-4 columns">
