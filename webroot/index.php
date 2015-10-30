@@ -6,7 +6,6 @@
   <title>All About Arrays</title>
 </head>
 <body>
-
 <?php
 // Each die could be an index array
 /*
@@ -25,6 +24,19 @@
   'die5' => array( 6, 4, 2, 1, 3, 5 ),
 );*/
 ?>
+<div>
+  <h1>Hello</h1>
+<?php
+  for ( $i = 1; $i <= 6; $i++ ) {
+    ${"die$i"} = array('dog', 'cat', 'bat', 'sheep');
+    // not sure why this doesn't work
+    implode(', ', ${"die$i"});
+  }
 
+/*$all_dice = array(
+
+);*/
+?>
+</div>
 </body>
 </html>
