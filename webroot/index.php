@@ -25,18 +25,67 @@
 );*/
 ?>
 <div>
-  <h1>Hello</h1>
+  <h1>Iteration 1 (In order keys, in order values):</h1>
 <?php
-  for ( $i = 1; $i <= 6; $i++ ) {
-    ${"die$i"} = array('dog', 'cat', 'bat', 'sheep');
-    // not sure why this doesn't work
-    implode(', ', ${"die$i"});
+// Each die is an index array, odds in ascending order, evens in descending order
+  for ($i = 1; $i <= 5; $i+=2) {
+    ${'die' . $i} = array(1,2,3,4,5,6);
   }
-
-/*$all_dice = array(
-
-);*/
+  for ($i = 2; $i <= 5; $i+=2) {
+    ${'die' . $i} = array(6,5,4,3,2,1);
+  }
+  for ($i = 1; $i <= 5; $i++) { 
+    echo 'die' . $i . ' = (' . implode(', ', (${'die' . $i})) . ' )<br />';
+  }
 ?>
 </div>
+<div>
+  <h1>Iteration 2 (In order keys, in reverse order values):</h1>
+<?php
+
+  for ($i = 1; $i <= 5; $i+=2) {
+    ${'die' . $i} = array(6,5,4,3,2,1);
+  }
+  for ($i = 2; $i <= 5; $i+=2) {
+    ${'die' . $i} = array(1,2,3,4,5,6);
+  }
+  for ($i = 1; $i <= 5; $i++) { 
+    echo 'die' . $i . ' = (' . implode(', ', (${'die' . $i})) . ' )<br />';
+  }
+?>
+</div>
+<div>
+  <h1>Iteration 3 (In reverse order keys, in order values):</h1>
+<?php
+
+  for ($i = 1; $i <= 5; $i+=2) {
+    ${'die' . $i} = array(6,4,2,1,3,5);
+  }
+  for ($i = 2; $i <= 5; $i+=2) {
+    ${'die' . $i} = array(1,3,5,2,4,6);
+  }
+  for ($i = 5; $i > 0; $i--) { 
+    echo 'die' . $i . ' = (' . implode(', ', (${'die' . $i})) . ' )<br />';
+  }
+?>
+</div>
+<div>
+  <h1>Iteration 4 (in reverse order keys, in reverse order values):</h1>
+<?php
+
+?>
+</div>
+<div>
+<h1>Extra Credit</h1>
+<?php
+/*
+Extra Credit:
+1. Build $all_dice array programatically
+2. Associative array should have 5 dice (die1...die5), but the only string used in source code should be "die"
+3. Each die will be an indexed array containing numbers 1-6, containing no duplicates
+4. Each odd die should have in order sequence 1...6
+5. Each even die should have in reverse order sequence 6...1 
+*/
+?></div>
 </body>
 </html>
