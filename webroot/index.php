@@ -28,20 +28,11 @@
   <h1>Iteration 1 (In order keys, in order values):</h1>
 <?php
 // Each die is an index array, odds in ascending order, evens in descending order
-$i = 1;
-$array = array(1, 2, 3, 4, 5, 6);
-foreach ($array as $val) {
-  if (0 == $i % 2) {
-    ${'die' . $i} = array();
-    ${'die' . $i} = range(6,1);// even
-  }
-  else {
-    ${'die' . $i} = array();
-    ${'die' . $i} = range(1,6);
-  }
-  echo '$die' .$i . ' = ('.(implode(', ', ${'die' . $i})). ')<br>';
-$i++;
-}
+$keys = array('green', 'red', 'yellow');
+$values = array('avocado', 'apple', 'banana');
+$all_dice = array_combine($keys, $values);
+
+echo '$all_dice: ( ' . implode(', ', $all_dice) . ' )';
 ?>
 </div>
 <div>
