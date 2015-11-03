@@ -37,19 +37,36 @@ foreach ($all_dice as $key => $value) {
 <div>
   <h1>Iteration 2 (In order keys, in reverse order values):</h1>
 <?php
-
+foreach ($all_dice as $key => $value) {
+  echo $key;
+  echo ' = (';
+  print_r(array_reverse($value));
+  echo ')<br>';
+}
 ?>
 </div>
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
-
+$all_dice = array_reverse($all_dice);
+foreach ($all_dice as $key => $value) {
+  echo $key;
+  echo ' = (';
+  print_r($value);
+  echo ')<br>';
+}
 ?>
 </div>
 <div>
   <h1>Iteration 4 (in reverse order keys, in reverse order values):</h1>
 <?php
-
+array_reverse($all_dice);
+foreach ($all_dice as $key => $value) {
+  echo $key;
+  echo ' = (';
+  print_r(array_values(array_reverse($value)));
+  echo ')<br>';
+}
 ?>
 </div>
 <div>
