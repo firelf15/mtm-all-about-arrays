@@ -29,18 +29,18 @@ $all_dice = array(
 <?php
 // Each die is an index array, odds in ascending order, evens in descending order
 
-foreach ($all_dice as $key => $value) {
-  echo $key . ' = ( '. implode(', ',$value) . ' )<br>';
+foreach ( $all_dice as $key => $value ) {
+  echo $key . ' = ( '. implode( ', ', $value ) . ' )<br>';
 }
 ?>
 </div>
 <div>
   <h1>Iteration 2 (In order keys, in reverse order values):</h1>
 <?php
-foreach ($all_dice as $key => $value) {
+foreach ( $all_dice as $key => $value ) {
   echo $key;
   echo ' = ( ';
-  foreach ($value as $side) {
+  foreach ( $value as $side ) {
     echo $side;
     echo ', ';
   }
@@ -51,24 +51,30 @@ foreach ($all_dice as $key => $value) {
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
-$all_dice = array_reverse($all_dice);
-foreach ($all_dice as $key => $value) {
+$all_dice = array_reverse( $all_dice );
+foreach ( $all_dice as $key => $value ) {
   echo $key;
-  echo ' = (';
-  print_r($value);
-  echo ')<br>';
+  echo ' = ( ';
+  foreach ( $value as $side ) {
+    echo $side;
+    echo ', ';
+  }
+  echo ' )<br>';
 }
 ?>
 </div>
 <div>
   <h1>Iteration 4 (in reverse order keys, in reverse order values):</h1>
 <?php
-array_reverse($all_dice);
-foreach ($all_dice as $key => $value) {
+foreach ( $all_dice as $key => $value ) {
   echo $key;
-  echo ' = (';
-  print_r(array_values(array_reverse($value)));
-  echo ')<br>';
+  echo ' = ( ';
+  $value = array_reverse( $value );
+  foreach ( $value as $side ) {
+    echo $side;
+    echo ', ';
+  }
+  echo ' )<br>';
 }
 ?>
 </div>
