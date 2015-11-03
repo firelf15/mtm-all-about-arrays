@@ -51,6 +51,7 @@ foreach ( $all_dice as $key => $value ) {
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
+// NOPE! no redefining the array
 $all_dice = array_reverse( $all_dice );
 foreach ( $all_dice as $key => $value ) {
   echo $key;
@@ -88,7 +89,18 @@ Extra Credit:
 3. Each die will be an indexed array containing numbers 1-6, containing no duplicates
 4. Each odd die should have in order sequence 1...6
 5. Each even die should have in reverse order sequence 6...1
+
+for ($i = 1; $i <= 10; $i++) {
+    echo $i;
+}
+
 */
+$die;
+$side = range( 1, 6 );
+$all_dice = array();
+echo '<hr>';
+echo 'result of $all_dice: ';
+var_dump($all_dice);
 ?></div>
 </body>
 </html>
