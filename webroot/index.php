@@ -30,7 +30,7 @@ $all_dice = array(
 // Each die is an index array, odds in ascending order, evens in descending order
 
 foreach ($all_dice as $key => $value) {
-  echo $key . '=('. implode(', ',$value) . ')<br>';
+  echo $key . ' = ( '. implode(', ',$value) . ' )<br>';
 }
 ?>
 </div>
@@ -39,9 +39,12 @@ foreach ($all_dice as $key => $value) {
 <?php
 foreach ($all_dice as $key => $value) {
   echo $key;
-  echo ' = (';
-  print_r(array_reverse($value));
-  echo ')<br>';
+  echo ' = ( ';
+  foreach ($value as $side) {
+    echo $side;
+    echo ', ';
+  }
+  echo ' )<br>';
 }
 ?>
 </div>
