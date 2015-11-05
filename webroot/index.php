@@ -44,11 +44,13 @@ foreach ( $all_dice as $key => $value ) {
 <div>
   <h1>Iteration 2 (In order keys, in reverse order values):</h1>
 <?php
-for ( $i = 1; $i < 6; $i++ ) {
-  echo 'die' . $i . ' = ( ';
-  foreach(array_reverse($all_dice['die' . $i]) as $side) {
-    echo $all_dice['die' . $i][$side] . ', ';
-  }
+foreach ($all_dice as $key => $value) {
+  echo $key . ' = ( ';
+    $comma = '';
+    for ( $i = 5; $i >= 0; $i-- ) {
+      // echo $all_dice['die1'][2];
+      echo $all_dice[$key][$i] . ', ';
+    }
   echo ' )<br>';
 }
 ?>
