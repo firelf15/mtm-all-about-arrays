@@ -16,6 +16,7 @@
   $die5 = array(1,2,3,4,5,6);
   */
 // An associative array of 5 index arrays for all the dice togather
+global $all_dice;
 $all_dice = array(
   'die1' => array( 1, 2, 3, 4, 5, 6 ),
   'die2' => array( 6, 5, 4, 3, 2, 1 ),
@@ -27,22 +28,26 @@ $all_dice = array(
 <div>
   <h1>Iteration 1 (In order keys, in order values):</h1>
 <?php
-// Each die is an index array, odds in ascending order, evens in descending order
-
+for ( $i = 1; $i < 6; $i++ ) {
+  echo 'die' . $i . ' = ( ';
+  for ( $side = 0; $side <= 5; $side++ ) {
+    echo $all_dice['die' . $i][$side] . ', ';
+  }
+  echo ' )<br>';
+}
+/* cheater cheater pumpkin eater
 foreach ( $all_dice as $key => $value ) {
   echo $key . ' = ( '. implode( ', ', $value ) . ' )<br>';
-}
+}*/
 ?>
 </div>
 <div>
   <h1>Iteration 2 (In order keys, in reverse order values):</h1>
 <?php
-foreach ( $all_dice as $key => $value ) {
-  echo $key;
-  echo ' = ( ';
-  foreach ( $value as $side ) {
-    echo $side;
-    echo ', ';
+for ( $i = 1; $i < 6; $i++ ) {
+  echo 'die' . $i . ' = ( ';
+  foreach(array_reverse($all_dice['die' . $i]) as $side) {
+    echo $all_dice['die' . $i][$side] . ', ';
   }
   echo ' )<br>';
 }
@@ -51,14 +56,10 @@ foreach ( $all_dice as $key => $value ) {
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
-// NOPE! no redefining the array
-$all_dice = array_reverse( $all_dice );
-foreach ( $all_dice as $key => $value ) {
-  echo $key;
-  echo ' = ( ';
-  foreach ( $value as $side ) {
-    echo $side;
-    echo ', ';
+for ( $i = 1; $i < 6; $i++ ) {
+  echo 'die' . $i . ' = ( ';
+  for ( $side = 0; $side <= 5; $side++ ) {
+    echo $all_dice['die' . $i][$side] . ', ';
   }
   echo ' )<br>';
 }
@@ -100,7 +101,7 @@ $side = range( 1, 6 );
 $all_dice = array();
 echo '<hr>';
 echo 'result of $all_dice: ';
-var_dump($all_dice);
+var_dump( $all_dice );
 ?></div>
 </body>
 </html>
