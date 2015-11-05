@@ -58,11 +58,13 @@ foreach ($all_dice as $key => $value) {
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
-for ( $i = 1; $i < 6; $i++ ) {
-  echo 'die' . $i . ' = ( ';
-  for ( $side = 0; $side <= 5; $side++ ) {
-    echo $all_dice['die' . $i][$side] . ', ';
-  }
+foreach (array_reverse($all_dice) as $key => $value) {
+  echo $key . ' = ( ';
+    $comma = '';
+    for ( $i = 0; $i < 6; $i++ ) {
+      // echo $all_dice['die1'][2];
+      echo $all_dice[$key][$i] . ', ';
+    }
   echo ' )<br>';
 }
 ?>
@@ -70,14 +72,13 @@ for ( $i = 1; $i < 6; $i++ ) {
 <div>
   <h1>Iteration 4 (in reverse order keys, in reverse order values):</h1>
 <?php
-foreach ( $all_dice as $key => $value ) {
-  echo $key;
-  echo ' = ( ';
-  $value = array_reverse( $value );
-  foreach ( $value as $side ) {
-    echo $side;
-    echo ', ';
-  }
+foreach (array_reverse($all_dice) as $key => $value) {
+  echo $key . ' = ( ';
+    $comma = '';
+    for ( $i = 5; $i >= 0; $i-- ) {
+      // echo $all_dice['die1'][2];
+      echo $all_dice[$key][$i] . ', ';
+    }
   echo ' )<br>';
 }
 ?>
