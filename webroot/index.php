@@ -26,6 +26,7 @@ $all_dice = array(
 );
 ?>
 <div>
+  <a href="extraCredit.php">Extra Credit</a>
   <h1>Iteration 1 (In order keys, in order values):</h1>
 <?php
 for ( $i = 1; $i < 6; $i++ ) {
@@ -70,7 +71,7 @@ foreach (array_reverse($all_dice) as $key => $value) {
 ?>
 </div>
 <div>
-  <h1>Iteration 4 (in reverse order keys, in reverse order values):</h1>
+  <h1>Iteration 4 (In reverse order keys, in reverse order values):</h1>
 <?php
 foreach (array_reverse($all_dice) as $key => $value) {
   echo $key . ' = ( ';
@@ -83,28 +84,5 @@ foreach (array_reverse($all_dice) as $key => $value) {
 }
 ?>
 </div>
-<div>
-<h1>Extra Credit</h1>
-<?php
-/*
-Extra Credit:
-1. Build $all_dice array programatically
-2. Associative array should have 5 dice (die1...die5), but the only string used in source code should be "die"
-3. Each die will be an indexed array containing numbers 1-6, containing no duplicates
-4. Each odd die should have in order sequence 1...6
-5. Each even die should have in reverse order sequence 6...1
-
-for ($i = 1; $i <= 10; $i++) {
-    echo $i;
-}
-
-*/
-$die;
-$side = range( 1, 6 );
-$all_dice = array();
-echo '<hr>';
-echo 'result of $all_dice: ';
-var_dump( $all_dice );
-?></div>
 </body>
 </html>
