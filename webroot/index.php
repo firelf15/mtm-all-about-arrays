@@ -47,7 +47,7 @@ foreach ( $all_dice as $key => $value ) {
 <?php
 foreach ($all_dice as $key => $value) {
   echo $key . ' = ( ';
-    $comma = '';
+    // $comma = '';
     for ( $i = 5; $i >= 0; $i-- ) {
       // echo $all_dice['die1'][2];
       echo $all_dice[$key][$i] . ', ';
@@ -61,7 +61,7 @@ foreach ($all_dice as $key => $value) {
 <?php
 foreach (array_reverse($all_dice) as $key => $value) {
   echo $key . ' = ( ';
-    $comma = '';
+    // $comma = '';
     for ( $i = 0; $i < 6; $i++ ) {
       // echo $all_dice['die1'][2];
       echo $all_dice[$key][$i] . ', ';
@@ -75,7 +75,7 @@ foreach (array_reverse($all_dice) as $key => $value) {
 <?php
 foreach (array_reverse($all_dice) as $key => $value) {
   echo $key . ' = ( ';
-    $comma = '';
+    // $comma = '';
     for ( $i = 5; $i >= 0; $i-- ) {
       // echo $all_dice['die1'][2];
       echo $all_dice[$key][$i] . ', ';

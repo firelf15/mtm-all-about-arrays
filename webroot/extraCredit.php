@@ -17,25 +17,51 @@ Extra Credit:
 4. Each odd die should have in order sequence 1...6
 5. Each even die should have in reverse order sequence 6...1
 
+ASSOCIATIVE
+foreach ($array as $die => $value) {
+  # code...
+}
+INDEX
 for ($i = 1; $i <= 10; $i++) {
     echo $i;
 }
+http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
+Associative array in foreach statement:
+
+foreach($all_dice as $field => $value) {
+  $all_dice[$field]=$value;
+}
+
+Output:
+Array(
+$field => $value,
+$field => $value
+...
+);
 
 */
-// Loop to make 5 die
-for ($i = 1; $i <= 5; $i++) {
-   $array[] = 'die' . $i;
-    echo '<br>';
-}
-print_r($array);
-/*$arr = array(1, 2, 3, 4);
-foreach ($arr as &$value) {
-    $value = $value * 2;
-}
-// $arr is now array(2, 4, 6, 8)
-unset($value); // break the reference with the last element*/
+$sides = range(1,6);
+$all_dice = array();
+$all_dice[] = array(
+  'die1' => 'array(1,2,3,4,5,6)',
+  'die2' => 'array(1,2,3,4,5,6)',
+  'die3' => 'array(1,2,3,4,5,6)',
+  'die4' => 'array(1,2,3,4,5,6)',
+  'die5' => 'array(1,2,3,4,5,6)',
+  );
 
-?>
+
+
+
+
+/*$die1 = array();
+  for ($side = 1; $side <= 6; $side++) {
+    $die1[] = $side;
+  }*/
+
+var_dump($all_dice);
+
+//$all_dice[] = array('die$i' => 'array of 6 items'); ?>
 </div>
 <?php
 // Each die could be an index array
