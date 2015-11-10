@@ -52,8 +52,8 @@ print_r($five_items);
 
 
 $all_dice = array();
-foreach($all_dice as $five_items[$die_number] => $six_sides) {
-  $all_dice[$five_items[$die_number]][] = $six_sides;
+  /*MAKE THIS A BUILDER, NOT A REVEALER
+  $all_dice[]= ...*/
 }
 
 echo '<br>var_dump($all_dice) result is:<br>';
