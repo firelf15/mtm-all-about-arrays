@@ -18,69 +18,47 @@ Extra Credit:
 5. Each even die should have in reverse order sequence 6...1
 
 ASSOCIATIVE
-foreach ($array as $die => $value) {
+foreach ($array as $key => $value) {
   # code...
 }
+OR
+foreach (array_expression as $value) {
+
+}
+
 INDEX
 for ($i = 1; $i <= 10; $i++) {
     echo $i;
 }
 http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
 Associative array in foreach statement:
+*/
+$six_sides = array();
+  for ($side = 1; $side <= 6; $side++) {
+      $six_sides[] = $side;
+  }
 
-foreach($all_dice as $field => $value) {
-  $all_dice[$field]=$value;
+echo 'print_r($six_sides) results in:<br>';
+print_r($six_sides);
+
+
+$five_items = array();
+for ($die_number = 1; $die_number <= 5; $die_number++) {
+  $five_items[] = $die_number;
 }
 
-Output:
-Array(
-$field => $value,
-$field => $value
-...
-);
+echo '<br>print_r($five_items) results in:<br>';
+print_r($five_items);
 
-*/
-$sides = range(1,6);
+
 $all_dice = array();
-$all_dice[] = array(
-  'die1' => 'array(1,2,3,4,5,6)',
-  'die2' => 'array(1,2,3,4,5,6)',
-  'die3' => 'array(1,2,3,4,5,6)',
-  'die4' => 'array(1,2,3,4,5,6)',
-  'die5' => 'array(1,2,3,4,5,6)',
-  );
+foreach($all_dice as $five_items[$die_number] => $six_sides) {
+  $all_dice[$five_items[$die_number]][] = $six_sides;
+}
 
-
-
-
-
-/*$die1 = array();
-  for ($side = 1; $side <= 6; $side++) {
-    $die1[] = $side;
-  }*/
-
+echo '<br>var_dump($all_dice) result is:<br>';
 var_dump($all_dice);
-
-//$all_dice[] = array('die$i' => 'array of 6 items'); ?>
-</div>
-<?php
-// Each die could be an index array
-/*
-  $die1 = array(1,2,3,4,5,6);
-  $die2 = array(1,2,3,4,5,6);
-  $die3 = array(1,2,3,4,5,6);
-  $die4 = array(1,2,3,4,5,6);
-  $die5 = array(1,2,3,4,5,6);
-  */
-// An associative array of 5 index arrays for all the dice togather
-/*global $all_dice;
-$all_dice = array(
-  'die1' => array( 1, 2, 3, 4, 5, 6 ),
-  'die2' => array( 6, 5, 4, 3, 2, 1 ),
-  'die3' => array( 2, 4, 6, 1, 3, 5 ),
-  'die4' => array( 1, 3, 5, 2, 4, 6 ),
-  'die5' => array( 6, 4, 2, 1, 3, 5 ),
-);*/
 ?>
+</div>
 </body>
 </html>
