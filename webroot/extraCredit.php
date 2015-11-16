@@ -19,44 +19,34 @@ Extra Credit:
 
 ASSOCIATIVE
 foreach ($array as $key => $value) {
-  # code...
+# code...
 }
 OR
 foreach (array_expression as $value) {
-
 }
 
 INDEX
 for ($i = 1; $i <= 10; $i++) {
-    echo $i;
+echo $i;
 }
-http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
-Associative array in foreach statement:
 */
-$six_sides = array();
-  for ($side = 1; $side <= 6; $side++) {
-      $six_sides[] = $side;
-  }
-
-echo 'print_r($six_sides) results in:<br>';
-print_r($six_sides);
-
-
-$five_items = array();
-for ($die_number = 1; $die_number <= 5; $die_number++) {
-  $five_items[] = $die_number;
-}
-
-echo '<br>print_r($five_items) results in:<br>';
-print_r($five_items);
-
-
 $all_dice = array();
-  /*MAKE THIS A BUILDER, NOT A REVEALER
-  $all_dice[]= ...*/
-
-echo '<br>var_dump($all_dice) result is:<br>';
-var_dump($all_dice);
+for ( $d = 1; $d <= 5; $d++ ) {
+  if ( $d % 2 !== 0 ) {
+    // it is odd
+    for ( $s = 1; $s <= 6; $s++ ) {
+      $all_dice['die' . $d][] = $s;
+    }
+  } else {
+    // it is even
+    for ( $s = 6; $s >= 0; $s-- ) {
+      $all_dice['die' . $d][] = $s;
+    }
+  }
+}
+echo('<pre>');
+print_r( $all_dice );
+echo('</pre>');
 ?>
 </div>
 </body>
