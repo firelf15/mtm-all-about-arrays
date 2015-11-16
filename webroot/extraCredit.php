@@ -40,27 +40,20 @@ $field => $value
 );
 
 */
-$sides = range(1,6);
+
+
 $all_dice = array();
-$all_dice[] = array(
-  'die1' => 'array(1,2,3,4,5,6)',
-  'die2' => 'array(1,2,3,4,5,6)',
-  'die3' => 'array(1,2,3,4,5,6)',
-  'die4' => 'array(1,2,3,4,5,6)',
-  'die5' => 'array(1,2,3,4,5,6)',
-  );
-
-
-
-
-
-/*$die1 = array();
-  for ($side = 1; $side <= 6; $side++) {
-    $die1[] = $side;
-  }*/
-
-var_dump($all_dice);
-
+  for ($i = 1; $i <= 5; $i++) {
+    $all_dice['die'.$i] = array(
+      for ($s = 1; $s <= 6; $s++) {
+        $all_dice['die'.$i][] = $s;
+      }
+    );
+/*  for ($i = 1; $i <= 6; $i++) {
+  $all_dice['die'.$i] = $i;
+}*/
+}
+print_r($all_dice);
 //$all_dice[] = array('die$i' => 'array of 6 items'); ?>
 </div>
 <?php
