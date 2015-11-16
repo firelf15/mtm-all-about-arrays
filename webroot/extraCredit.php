@@ -33,7 +33,6 @@ for ($i = 1; $i <= 10; $i++) {
 http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
 Associative array in foreach statement:
 */
-
 $six_sides = array();
   for ($side = 1; $side <= 6; $side++) {
       $six_sides[] = $side;
@@ -48,47 +47,16 @@ for ($die_number = 1; $die_number <= 5; $die_number++) {
   $five_items[] = $die_number;
 }
 
-$all_dice = array();
-  for ($i = 1; $i <= 5; $i++) {
-    $all_dice['die'.$i] = array(
-      for ($s = 1; $s <= 6; $s++) {
-        $all_dice['die'.$i][] = $s;
-      }
-    );
-/*  for ($i = 1; $i <= 6; $i++) {
-  $all_dice['die'.$i] = $i;
-}*/
-}
-print_r($all_dice);
-//$all_dice[] = array('die$i' => 'array of 6 items'); ?>
-</div>
-<?php
-// Each die could be an index array
-/*
-  $die1 = array(1,2,3,4,5,6);
-  $die2 = array(1,2,3,4,5,6);
-  $die3 = array(1,2,3,4,5,6);
-  $die4 = array(1,2,3,4,5,6);
-  $die5 = array(1,2,3,4,5,6);
-  */
-// An associative array of 5 index arrays for all the dice togather
-/*global $all_dice;
-$all_dice = array(
-  'die1' => array( 1, 2, 3, 4, 5, 6 ),
-  'die2' => array( 6, 5, 4, 3, 2, 1 ),
-  'die3' => array( 2, 4, 6, 1, 3, 5 ),
-  'die4' => array( 1, 3, 5, 2, 4, 6 ),
-  'die5' => array( 6, 4, 2, 1, 3, 5 ),
-);*/
+echo '<br>print_r($five_items) results in:<br>';
+print_r($five_items);
+
 
 $all_dice = array();
   /*MAKE THIS A BUILDER, NOT A REVEALER
   $all_dice[]= ...*/
-}
 
 echo '<br>var_dump($all_dice) result is:<br>';
 var_dump($all_dice);
-
 ?>
 </div>
 </body>
