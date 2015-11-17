@@ -28,13 +28,16 @@ $complex_dice = array(
 // WHAT IF? VARIABLE NUMBR OF SIDES? VARIABLE NUMBER OF DIE? foreach and for with count(array)
 ?>
 <div>
-  <a href="extraCredit.php">Extra Credit</a>
+  <a href="index.php">Home</a><br>
+  <a href="extraCredit.php">Extra Credit</a><br>
+  <a href="complexDice.php">Complex Dice</a><br>
+  <a href="randomDice.php">Random Dice</a><br>
   <h1>Iteration 1 (In order keys, in order values):</h1>
 <?php
 foreach ($complex_dice as $key => $value) {
   echo $key . ': ';
-    for ( $i = 0; $i < count($complex_dice[$key], COUNT_RECURSIVE); $i++ ) {
-      if ($i !==(count($complex_dice[$key], COUNT_RECURSIVE)-1)) {
+    for ( $i = 0; $i < count($complex_dice[$key]); $i++ ) {
+      if ($i !==(count($complex_dice[$key])-1)) {
         echo $complex_dice[$key][$i] . ', ';
       } else {
         echo $complex_dice[$key][$i] . ' ';
@@ -49,9 +52,8 @@ foreach ($complex_dice as $key => $value) {
 <?php
 foreach ($complex_dice as $key => $value) {
   echo $key . ': ';
-    for ( $i = count($complex_dice[$key], COUNT_RECURSIVE); $i >= 0; $i-- ) {
-      // bah! commas;
-      if ($i !==(count($complex_dice[$key], COUNT_RECURSIVE))) {
+    for ( $i = count($complex_dice[$key])-1; $i >= 0; $i-- ) {
+      if ($i !==0) {
         echo $complex_dice[$key][$i] . ', ';
       } else {
         echo $complex_dice[$key][$i] . ' ';
@@ -64,11 +66,14 @@ foreach ($complex_dice as $key => $value) {
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
-foreach (array_reverse($complex_dice) as $key => $value) {
+foreach (array_reverse( $complex_dice, true) as $key => $side ) {
   echo $key . ': ';
-    for ( $i = 0; $i < count($complex_dice, COUNT_RECURSIVE); $i++ ) {
-      // echo $complex_dice['die1'][2];
-      echo $complex_dice[$key][$i] . ' ';
+    for ( $i = 0; $i < count($complex_dice[$key]); $i++ ) {
+      if ($i !==(count($complex_dice[$key])-1)) {
+        echo $complex_dice[$key][$i] . ', ';
+      } else {
+        echo $complex_dice[$key][$i] . ' ';
+      }
     }
   echo '<br>';
 }
@@ -79,9 +84,12 @@ foreach (array_reverse($complex_dice) as $key => $value) {
 <?php
 foreach (array_reverse($complex_dice) as $key => $value) {
   echo $key . ': ';
-    for ( $i = count($complex_dice, COUNT_RECURSIVE); $i >= 0; $i-- ) {
-      // echo $complex_dice['die1'][2];
-      echo $complex_dice[$key][$i] . ' ';
+    for ( $i = count($complex_dice[$key])-1; $i >= 0; $i-- ) {
+            if ($i !==0) {
+        echo $complex_dice[$key][$i] . ', ';
+      } else {
+        echo $complex_dice[$key][$i] . ' ';
+      }
     }
   echo '<br>';
 }

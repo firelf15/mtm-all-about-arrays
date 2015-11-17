@@ -27,61 +27,55 @@ $all_dice = array(
 // WHAT IF? VARIABLE NUMBR OF SIDES? VARIABLE NUMBER OF DIE? foreach and for with count(array)
 ?>
 <div>
-  <a href="extraCredit.php">Extra Credit</a>
+  <a href="index.php">Home</a><br>
+  <a href="extraCredit.php">Extra Credit</a><br>
+  <a href="complexDice.php">Complex Dice</a><br>
+  <a href="randomDice.php">Random Dice</a><br>
   <h1>Iteration 1 (In order keys, in order values):</h1>
 <?php
-for ( $i = 1; $i < 6; $i++ ) {
-  echo 'die' . $i . ' = ( ';
-  for ( $side = 0; $side <= 5; $side++ ) {
-    echo $all_dice['die' . $i][$side] . ', ';
+foreach ( $all_dice as $key => $side ) {
+  echo $key . ': ';
+  for ( $side = 0; $side <= count($all_dice); $side++ ) {
+    echo $all_dice[$key][$side] . ', ';
   }
-  echo ' )<br>';
+  echo '<br>';
 }
-/* cheater cheater pumpkin eater
-foreach ( $all_dice as $key => $value ) {
-  echo $key . ' = ( '. implode( ', ', $value ) . ' )<br>';
-}*/
 ?>
 </div>
 <div>
   <h1>Iteration 2 (In order keys, in reverse order values):</h1>
 <?php
-foreach ($all_dice as $key => $value) {
-  echo $key . ' = ( ';
-    // $comma = '';
-    for ( $i = 5; $i >= 0; $i-- ) {
-      // echo $all_dice['die1'][2];
-      echo $all_dice[$key][$i] . ', ';
-    }
-  echo ' )<br>';
+foreach ( $all_dice as $key => $side ) {
+  echo $key . ': ';
+  for ( $side = count($all_dice); $side >= 0; $side-- ) {
+    echo $all_dice[$key][$side] . ', ';
+  }
+  echo '<br>';
 }
 ?>
 </div>
 <div>
   <h1>Iteration 3 (In reverse order keys, in order values):</h1>
 <?php
-foreach (array_reverse($all_dice) as $key => $value) {
-  echo $key . ' = ( ';
-    // $comma = '';
-    for ( $i = 0; $i < 6; $i++ ) {
-      // echo $all_dice['die1'][2];
-      echo $all_dice[$key][$i] . ', ';
-    }
-  echo ' )<br>';
+foreach (array_reverse( $all_dice, true) as $key => $side ) {
+  echo $key . ': ';
+  for ( $side = 0; $side <= count($all_dice); $side++ ) {
+    echo $all_dice[$key][$side] . ', ';
+  }
+  echo '<br>';
 }
 ?>
 </div>
 <div>
   <h1>Iteration 4 (In reverse order keys, in reverse order values):</h1>
 <?php
-foreach (array_reverse($all_dice) as $key => $value) {
-  echo $key . ' = ( ';
+foreach (array_reverse($all_dice, true) as $key => $value) {
+  echo $key . ': ';
     // $comma = '';
-    for ( $i = 5; $i >= 0; $i-- ) {
-      // echo $all_dice['die1'][2];
+    for ( $i = count($all_dice); $i >= 0; $i-- ) {
       echo $all_dice[$key][$i] . ', ';
     }
-  echo ' )<br>';
+  echo '<br>';
 }
 ?>
 </div>

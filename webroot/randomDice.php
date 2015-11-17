@@ -7,7 +7,11 @@
 </head>
 <body>
   <div>
-<h1>Extra Credit</h1>
+  <a href="index.php">Home</a><br>
+  <a href="extraCredit.php">Extra Credit</a><br>
+  <a href="complexDice.php">Complex Dice</a><br>
+  <a href="randomDice.php">Random Dice</a><br>
+<h1>Random Extra Credit</h1>
 <?php
 /*
 Extra Credit:
